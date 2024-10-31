@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferraduras</title>
+</head>
+<body>
+    <label for="numCavalos">quantidade de cavalos comprados:</label>
+    <input type="number" id="numCavalos" min="0" required>
+    <button onclick="calcularFerraduras()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularFerraduras() {
+            const numCavalos = parseInt(document.getElementById("numCavalos").value);
+            const ferradurasNecessarias = numCavalos * 4;
+            document.getElementById("resultado").textContent = "A quantidade de ferraduras é: " + ferradurasNecessarias;
+        }
+    </script>
+</body>
+</html>

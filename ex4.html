@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gasolina</title>
+</head>
+<body>
+    <label for="precoLitro">Faz o L:</label>
+    <input type="number" id="precoLitro" step="0.01" min="0" required>
+    
+    <label for="valorPagamento">Valor:</label>
+    <input type="number" id="valorPagamento" step="0.01" min="0" required>
+    
+    <button onclick="calcularLitros()">Calcular</button>
+    
+    <p id="resultado"></p>
+
+    <script>
+        function calcularLitros() {
+            const precoLitro = parseFloat(document.getElementById("precoLitro").value);
+            const valorPagamento = parseFloat(document.getElementById("valorPagamento").value);
+
+            if (precoLitro > 0) {
+                const litrosColocados = valorPagamento / precoLitro;
+                document.getElementById("resultado").textContent = 
+                    `Quantidade de litros colocados: ${litrosColocados.toFixed(2)} L`;
+            } else {
+                document.getElementById("resultado").textContent = "insira um preço válido";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padaria</title>
+</head>
+<body>
+    <label for="quantidadePaes">Quantidade de pães:</label>
+    <input type="number" id="quantidadePaes" min="0" required>
+    
+    <label for="quantidadeBroas">Quantidade de broas:</label>
+    <input type="number" id="quantidadeBroas" min="0" required>
+    
+    <button onclick="calcularVendas()">Calcular</button>
+    
+    <p id="resultado"></p>
+
+    <script>
+        function calcularVendas() {
+            const quantidadePaes = parseInt(document.getElementById("quantidadePaes").value);
+            const quantidadeBroas = parseInt(document.getElementById("quantidadeBroas").value);
+
+            const totalPaes = quantidadePaes * 0.12;
+            const totalBroas = quantidadeBroas * 1.50;
+            const totalArrecadado = totalPaes + totalBroas;
+            const poupanca = totalArrecadado * 0.10;
+
+            document.getElementById("resultado").textContent = 
+                `Total arrecadado: ${totalArrecadado.toFixed(2)}\n` +
+                `Valor a ser guardado: ${poupanca.toFixed(2)}`;
+        }
+    </script>
+    
+</body>
+</html>

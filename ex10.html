@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>distância entre Dois Pontos</title>
+</head>
+<body>
+    
+    <h3>Ponto 1 (x1, y1)</h3>
+    <label for="x1">Digite x1:</label>
+    <input type="number" id="x1" required>
+    
+    <label for="y1">Digite y1:</label>
+    <input type="number" id="y1" required>
+    
+    <h3>Ponto 2 (x2, y2)</h3>
+    <label for="x2">Digite x2:</label>
+    <input type="number" id="x2" required>
+    
+    <label for="y2">Digite y2:</label>
+    <input type="number" id="y2" required>
+    
+    <button onclick="calcularDistancia()">Calcular Distância</button>
+    
+    <p id="resultado"></p>
+
+    <script>
+        function calcularDistancia() {
+            const x1 = parseFloat(document.getElementById("x1").value);
+            const y1 = parseFloat(document.getElementById("y1").value);
+            const x2 = parseFloat(document.getElementById("x2").value);
+            const y2 = parseFloat(document.getElementById("y2").value);
+
+            const distancia = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+
+            document.getElementById("resultado").textContent = 
+                `A distância entre os pontos é: ${distancia.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

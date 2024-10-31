@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dias total</title>
+</head>
+<body>
+    <label for="dia">Digite o dia:</label>
+    <input type="number" id="dia" min="1" max="30" required>
+    
+    <label for="mes">Digite o mês:</label>
+    <input type="number" id="mes" min="1" max="12" required>
+    
+    <button onclick="calcularDias()">Calcular</button>
+    
+    <p id="resultado"></p>
+
+    <script>
+        function calcularDias() {
+            const dia = parseInt(document.getElementById("dia").value);
+            const mes = parseInt(document.getElementById("mes").value);
+
+            if (mes >= 1 && mes <= 12 && dia >= 1 && dia <= 30) {
+                const diasPassados = (mes - 1) * 30 + dia;
+                document.getElementById("resultado").textContent = 
+                    `Dias passados: ${diasPassados}`;
+            } else {
+                document.getElementById("resultado").textContent = 
+                    "insira uma data válida.";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante</title>
+</head>
+<body>
+    <label for="pesoPrato">Peso do prato:</label>
+    <input type="number" id="pesoPrato" step="0.01" min="0" required>
+    
+    <button onclick="calcularValorRefeicao()">Calcular</button>
+    
+    <p id="resultado"></p>
+
+    <script>
+        function calcularValorRefeicao() {
+            const pesoPrato = parseFloat(document.getElementById("pesoPrato").value);
+            const precoPorQuilo = 12.00;
+            const valorAPagar = pesoPrato * precoPorQuilo;
+
+            document.getElementById("resultado").textContent = 
+                `O valor a pagar é: R$ ${valorAPagar.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

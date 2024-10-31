@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venda de Camisetas</title>
+</head>
+<body>
+    
+    <label for="qtdPequenas">camisetas p:</label>
+    <input type="number" id="qtdPequenas" min="0" required>
+    
+    <label for="qtdMedias">camisetas m:</label>
+    <input type="number" id="qtdMedias" min="0" required>
+    
+    <label for="qtdGrandes">camisetas g:</label>
+    <input type="number" id="qtdGrandes" min="0" required>
+    
+    <button onclick="calcularValorVenda()">Calcular Valor Arrecadado</button>
+    
+    <p id="resultado"></p>
+
+    <script>
+        function calcularValorVenda() {
+            const qtdPequenas = parseInt(document.getElementById("qtdPequenas").value);
+            const qtdMedias = parseInt(document.getElementById("qtdMedias").value);
+            const qtdGrandes = parseInt(document.getElementById("qtdGrandes").value);
+
+            const precoPequena = 10;
+            const precoMedia = 12;
+            const precoGrande = 15;
+
+            const valorArrecadado = (qtdPequenas * precoPequena) + 
+                                    (qtdMedias * precoMedia) + 
+                                    (qtdGrandes * precoGrande);
+
+            document.getElementById("resultado").textContent = 
+                `O valor arrecadado será: R$ ${valorArrecadado.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
